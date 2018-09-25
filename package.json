@@ -10,6 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/ksoft-si/ksoft.js.git"
   },
+  "keywords": [
+    "api-wrapper",
+    "api-client",
+    "image",
+    "lyrics-fetcher",
+    "discord-bot",
+    "discord-js"
+  ],
   "author": "https://github.com/ksoft-si/",
   "license": "MIT",
   "bugs": {
