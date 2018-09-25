@@ -1,0 +1,28 @@
+{
+  "name": "ksoft.js",
+  "version": "1.0.0",
+  "description": "Official API Wrapper for KSoft.Si API, written in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksoft-si/ksoft.js.git"
+  },
+  "author": "https://github.com/ksoft-si/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksoft-si/ksoft.js/issues"
+  },
+  "homepage": "https://github.com/ksoft-si/ksoft.js#readme",
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "standard": "^12.0.1"
+  }
+}
