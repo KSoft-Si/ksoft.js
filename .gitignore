@@ -62,3 +62,5 @@ typings/
 
 # Jetbrains IDE configurations
 .idea/
+# testing directory
+testing/
