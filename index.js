@@ -1,4 +1,4 @@
-const { images } = require("../lib/api's/images")
+const { images } = require("./lib/apis/images")
 
 const ksoftAPI = class ksoftAPI {
     constructor(token){
