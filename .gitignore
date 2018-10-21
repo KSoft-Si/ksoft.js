@@ -64,3 +64,5 @@ typings/
 .idea/
 # testing directory
 testing/
+# npmrc
+.npmrc

@@ -4,7 +4,7 @@
   "description": "Official API Wrapper for KSoft.Si API, written in Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
+    "test": "nodemon -q ./testing/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/ksoft-si/ksoft.js#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "form-data": "^2.3.3"
   },
   "devDependencies": {
     "eslint": "^5.6.0",
