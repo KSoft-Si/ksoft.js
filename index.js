@@ -12,6 +12,4 @@ const ksoftAPI = class ksoftAPI {
 
 }
 
-module.exports = {
-    ksoftAPI
-}
+module.exports = ksoftAPI
