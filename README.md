@@ -61,12 +61,12 @@ ksoft.bans.check(userID).then(result => { // userID is the user you want to chec
 // lets get information about a location
 ksoft.kumo.search(query,fast,more,mapZoom,includeMap).then(result => {
     // do whatever you want with the results
-}) /* query is the location you want to get information about fast is whether you want to get information about. Fast if whether you want to get the information fast but missing a little bit of information. mapZoom is how zoomed in you want the map (defaults to 12). Include map is whether you want the map included in the results.*/
+}) /* query is the location you want to get information about. Fast is whether you want to get the information fast but missing a little bit of information. More is if you want the api to return more than one location. mapZoom is how zoomed in you want the map (defaults to 12). IncludeMap is whether you want the map included in the results.*/
 
 // lets get the weather for the place we just searched :)
 ksoft.kumo.getSimpleWeather(reportType,q,units,lang,icons).then(result => {
     // do whatever you want with the result
-}) /* the reportType is the weather report type. Can be one of: "currently", "minutely", "hourly", "daily". The q is the query this is the location you want to get weather for. units is the unit type you can select from. Your options are: "si", "us", "uk2", "ca", or "auto". lang is the language you want the results to be in. Your options are: 'ar', 'az', 'be', 'bg', 'bs', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'fi', 'fr', 'he', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ka', 'ko', 'kw', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'tet', 'tr', 'uk', 'x-pig-latin', 'zh', or 'zh-tw'. Finally icon is the icon pack you can choose from. Defualts to original*/
+}) /* the reportType is the weather report type. Can be one of: "currently", "minutely", "hourly", "daily". The q is the query, this is the location you want to get weather for. units is the unit type you can select from. Your options are: "si", "us", "uk2", "ca", or "auto". lang is the language you want the results to be in. Your options are: 'ar', 'az', 'be', 'bg', 'bs', 'ca', 'cs', 'da', 'de', 'el', 'en', 'es', 'et', 'fi', 'fr', 'he', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ka', 'ko', 'kw', 'nb', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'tet', 'tr', 'uk', 'x-pig-latin', 'zh', or 'zh-tw'. Finally icons is the icon pack you want to choose from. Defualts to original*/
 
 // Again there's more but lets move on to the final api and the one that is my favorite, the lyrics api.
 
@@ -82,6 +82,7 @@ ksoft.lyrics.getArtistById(id).then(result => {
 /* All of the api's have jsdoc in them so if your using an editor such as Visual Studio Code (Which I highly recommend) it will give you more information about what you need to put into the paremeters and what exactly each function returns in detail.*/
 ```
 ## All functions
+
 ### Images Api
 ```javascript
 ksoft.images.getRandomMeme()
@@ -174,4 +175,4 @@ ksoft.lyrics.getTrackById(id)
 ```
 
 
-Special thanks to sdf for helping my troubleshoot some stuff :)
+Special thanks to sdf for helping me troubleshoot some stuff :)
