@@ -1,6 +1,6 @@
 {
   "name": "ksoft.js",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "Official API Wrapper for KSoft.Si API, written in Node.js",
   "main": "index.js",
   "scripts": {
