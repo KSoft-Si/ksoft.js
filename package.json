@@ -4,7 +4,7 @@
   "description": "Official API Wrapper for KSoft.Si API, written in Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon -q ./testing/index.js"
+    "test": "nodemon -q ./testing/test.js"
   },
   "repository": {
     "type": "git",
