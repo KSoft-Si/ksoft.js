@@ -44,13 +44,21 @@ ksoft.images.getRandomNSFW()
 ```
 
 ```javascript
-ksoft.images.getRandomReddit({subReddit,removeNSFW,span})
+ksoft.images.getRandomReddit(subReddit,removeNSFW,span)
 ```
 
 ### Bans Api
 
 ```javascript
-ksoft.bans.add(banData)
+ksoft.bans.add({
+    user: "123456789741" ,
+    mod: "123456789742" ,
+    user_name: "SomeBadUsername" ,
+    user_discriminator: "#1234" ,
+    reason: "Your descriptive reason" ,
+    proof: "Your proof",
+    appeal_possible: true
+})
 ```
 
 ```javascript
