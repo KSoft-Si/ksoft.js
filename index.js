@@ -33,4 +33,3 @@ class ksoftAPI{
 }
 
 module.exports = ksoftAPI
-//module.exports.webhook = webhook
