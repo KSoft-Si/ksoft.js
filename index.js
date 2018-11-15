@@ -5,6 +5,7 @@ const { lyrics } = require("./lib/apis/lyrics")
 const Webhook = require("./lib/webhook/server")
 /**
  * @typedef {Object} webhookOptions webhook options
+ * @prop {Boolean} useWebhooks whether to use the webhook feature
  * @prop {number} port webhook http server port
  * @prop {String} Authentication Your webhook authentication
  */
@@ -15,13 +16,13 @@ class ksoftAPI{
      * @param {boolean} useWebhooks Whether you want to use the webhook feature
      * @param {webhookOptions} webhookOptions webhook options
      */
-    constructor(token, useWebhooks, webhookOptions){
+    constructor(token, webhookOptions){
        /**
         * The webhook class if useWebhooks is true
         * @type {Webhook?}
         */
         this.webhook = null
-        if(useWebhooks){
+        if(webhookOptions.useWebhooks){
             this.webhook = new Webhook(webhookOptions.port, webhookOptions.Authentication)
         }
         this.images = new images(token)
