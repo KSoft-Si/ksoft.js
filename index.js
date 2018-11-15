@@ -18,7 +18,7 @@ class ksoftAPI{
     constructor(token, useWebhooks, webhookOptions){
        /**
         * The webhook class if useWebhooks is true
-        * @type {?Webhook}
+        * @type {Webhook?}
         */
         this.webhook = null
         if(useWebhooks){
