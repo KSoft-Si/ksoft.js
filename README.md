@@ -51,13 +51,13 @@ ksoft.images.getRandomReddit(subReddit,removeNSFW,span)
 
 ```javascript
 ksoft.bans.add({
-    user: "123456789741" ,
-    mod: "123456789742" ,
-    user_name: "SomeBadUsername" ,
-    user_discriminator: "#1234" ,
-    reason: "Your descriptive reason" ,
-    proof: "Your proof",
-    appeal_possible: true
+    user: String ,
+    mod: String ,
+    user_name: String ,
+    user_discriminator: String ,
+    reason: String ,
+    proof: String,
+    appeal_possible: Boolean
 })
 ```
 
@@ -119,6 +119,33 @@ ksoft.lyrics.getAlbumById(id)
 
 ```javascript
 ksoft.lyrics.getTrackById(id)
+```
+
+## Webhook feature
+
+This just requires adding a few things when we initiate ksoft.js
+
+```javascript
+    const Ksoft = require("ksoft.js")
+    const ksoft = new Ksoft("your ksoft token", {
+        useWebhooks: true,
+        port: 2000, // this is the port the http server is going to run on. This can be whatever port you want I am just using 2000 as an example
+        Authentication: "your webhook authentication token"
+    })
+
+    ksoft.webhook.on("ready", info => {
+        console.log(info) // this will return the host your http server is running on. This is what you will give to ksoft to send the info to. { "host": "yourpublicip:theportyouspecified"}
+    })
+```
+
+that was just to get everything up and running now let's see how we can actually access that data. It's really simple :)
+
+```javascript
+    // this is an extension of the previous example. Everything works on events so you can simply do this
+
+    ksoft.webhook.on('ban', banData => {
+        console.log(banData) // there you simply get the banInfo sent from ksoft. All the event names are the same as on the ksoft documentation so if you want more info just go to https://docs.ksoft.si/api/webhooks
+    })
 ```
 
 
