@@ -13,7 +13,6 @@ class ksoftAPI{
     /**
      * @constructor
      * @param {number} token Your ksoft api token
-     * @param {boolean} useWebhooks Whether you want to use the webhook feature
      * @param {webhookOptions} webhookOptions webhook options
      */
     constructor(token, webhookOptions){
