@@ -10,7 +10,6 @@ const Webhook = require('./lib/webhook/server');
  * @prop {number} port webhook http server port
  * @prop {String} Authentication Your webhook authentication
  */
-<<<<<<< HEAD
 class ksoftAPI {
 	/**
 	 * @constructor
@@ -36,29 +35,3 @@ class ksoftAPI {
 }
 
 module.exports = ksoftAPI;
-=======
-class ksoftAPI{
-    /**
-     * @constructor
-     * @param {number} token Your ksoft api token
-     * @param {webhookOptions} webhookOptions webhook options
-     */
-    constructor(token, webhookOptions){
-       /**
-        * The webhook class if useWebhooks is true
-        * @type {Webhook?}
-        */
-        this.webhook = null
-        if(webhookOptions.useWebhooks){
-            this.webhook = new Webhook(webhookOptions.port, webhookOptions.Authentication)
-        }
-        this.images = new images(token)
-        this.bans = new bans(token)
-        this.kumo = new kumo(token)
-        this.lyrics = new lyrics(token)
-    }
-
-}
-
-module.exports = ksoftAPI
->>>>>>> 9f9bf06cb4a6c9774d8d187711fc3168199e40a0
