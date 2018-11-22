@@ -87,6 +87,13 @@ ksoft.bans.list(page, perPage);
 ksoft.bans.getUpdate(epochDate);
 ```
 
+```javascript
+ksoft.bans.bulkCheck(ids, {
+	moreInfo: Boolean,
+	bannedOnly: Boolean,
+});
+```
+
 ### Kumo Api
 
 ```javascript
