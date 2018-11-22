@@ -10,6 +10,13 @@ installing...
 npm install ksoft.js --save
 ```
 
+initializing...
+
+```javascript
+const Ksoft = require('ksoft.js');
+const ksoft = new Ksoft(yourtoken, webhookOptions); // webhook options will be reviewed below
+```
+
 ## All functions
 
 ### Images Api
