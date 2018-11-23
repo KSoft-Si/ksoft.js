@@ -23,8 +23,10 @@ class ksoftAPI {
 		 * @type {Webhook?}
 		 */
 		this.webhook = null;
-		if (webhookOptions.useWebhooks) {
-			this.webhook = new Webhook(webhookOptions.port, webhookOptions.Authentication);
+		if (webhookOptions) {
+			if (webhookOptions.useWebhooks) {
+				this.webhook = new Webhook(webhookOptions.port, webhookOptions.Authentication);
+			}
 		}
 		this.images = new images(token);
 		this.bans = new bans(token);
