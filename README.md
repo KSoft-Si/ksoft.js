@@ -91,7 +91,7 @@ ksoft.bans.getUpdate(epochDate);
 ksoft.bans.bulkCheck(ids, {
 	moreInfo: Boolean,
 	bannedOnly: Boolean,
-	advancedBannedOnly: Boolean,
+	advancedBannedOnly: Boolean, // this can only be used by itself
 });
 ```
 
@@ -144,6 +144,12 @@ ksoft.lyrics.getAlbumById(id);
 
 ```javascript
 ksoft.lyrics.getTrackById(id);
+```
+
+voiceConnection is the discord.js voiceConnection object you get when you connect to a voice channel. This command will search both youtube and the api for a song and if you provide a voice channel connection it will start playing the song and in the promise return the lyrics. This isn't 100% accurate so use at your own risk.
+
+```javascript
+ksoft.lyrics.searchAndPlay(query, voiceConnection);
 ```
 
 ## Webhook feature
