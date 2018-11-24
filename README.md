@@ -91,6 +91,14 @@ ksoft.bans.getUpdate(epochDate);
 ksoft.bans.bulkCheck(ids, {
 	moreInfo: Boolean,
 	bannedOnly: Boolean,
+	advancedBannedOnly: Boolean,
+});
+```
+
+```javascript
+ksoft.bans.guildMembersCheck(guildMemberCollection, {
+	moreInfo: Boolean,
+	ignoreBots: Boolean,
 });
 ```
 
