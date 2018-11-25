@@ -8,7 +8,7 @@ const Webhook = require('./lib/webhook/server');
  * @typedef {Object} webhookOptions webhook options
  * @prop {Boolean} useWebhooks whether to use the webhook feature
  * @prop {number} port webhook http server port
- * @prop {String} Authentication Your webhook authentication
+ * @prop {String} authentication Your webhook authentication
  */
 class ksoftAPI {
 	/**
@@ -25,7 +25,7 @@ class ksoftAPI {
 		this.webhook = null;
 		if (webhookOptions) {
 			if (webhookOptions.useWebhooks) {
-				this.webhook = new Webhook(webhookOptions.port, webhookOptions.Authentication);
+				this.webhook = new Webhook(webhookOptions.port, webhookOptions.authentication);
 			}
 		}
 		this.images = new images(token);
