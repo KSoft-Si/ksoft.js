@@ -29,7 +29,6 @@
 		"body-parser": "^1.18.3",
 		"express": "^4.16.4",
 		"form-data": "^2.3.3",
-		"node-opus": "^0.3.1",
 		"public-ip": "^2.4.0",
 		"ytdl-core": "^0.28.0"
 	},
