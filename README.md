@@ -153,8 +153,10 @@ ksoft.lyrics.getTrackById(id: Number);
 
 voiceConnection is the discord.js/eris voiceConnection object you get when you connect to a voice channel. This command will search both youtube and the api for a song and if you provide a voice channel connection it will start playing the song and in the promise return the lyrics. This isn't 100% accurate so use at your own risk.
 
+Please note: To play music with this feature you are going to need to have ffmpeg, node-opus/opuscript, and ytdl-core installed
+
 ```javascript
-ksoft.lyrics.searchAndPlay(query: String, voiceConnection, libraryVersion: String); // libraryVersion is the library you are using and version. for d.js master just put "d.js master" for stable put "d.js stable" if you are using eris just put eris
+ksoft.lyrics.searchAndPlay(query: String, voiceConnection);
 ```
 
 ## Webhook feature
