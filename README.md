@@ -101,7 +101,7 @@ ksoft.bans.bulkCheck(ids, {
 
 ```javascript
 ksoft.bans.guildMembersCheck(guildMemberCollection, {
-	// The guildMemberCollection is the discord.js guildMemberCollection that I can go through and check to see if they are banned
+	// The guildMemberCollection is the discord.js/eris guildMemberCollection that I can go through and check to see if they are banned
 	moreInfo: Boolean,
 	ignoreBots: Boolean,
 });
@@ -151,7 +151,7 @@ ksoft.lyrics.getAlbumById(id: Number);
 ksoft.lyrics.getTrackById(id: Number);
 ```
 
-voiceConnection is the discord.js voiceConnection object you get when you connect to a voice channel. This command will search both youtube and the api for a song and if you provide a voice channel connection it will start playing the song and in the promise return the lyrics. This isn't 100% accurate so use at your own risk.
+voiceConnection is the discord.js/eris voiceConnection object you get when you connect to a voice channel. This command will search both youtube and the api for a song and if you provide a voice channel connection it will start playing the song and in the promise return the lyrics. This isn't 100% accurate so use at your own risk.
 
 ```javascript
 ksoft.lyrics.searchAndPlay(query: String, voiceConnection);
