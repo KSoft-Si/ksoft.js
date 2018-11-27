@@ -123,6 +123,10 @@ ksoft.kumo.getSimpleWeather(reportType: String, query: String, units: String, la
 ```
 
 ```javascript
+ksoft.kumo.getSimpleWeather(latitude: Number, longitude: Number, reportType: String, units: String, lang: String, icons: String)
+```
+
+```javascript
 ksoft.kumo.geoip(ip: String);
 ```
 
