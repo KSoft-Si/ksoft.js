@@ -16,7 +16,9 @@
 		"image",
 		"lyrics-fetcher",
 		"discord-bot",
-		"discord-js"
+		"discord-js",
+		"discord.js",
+		"eris"
 	],
 	"author": "x_rebelfighter_x",
 	"license": "MIT",
