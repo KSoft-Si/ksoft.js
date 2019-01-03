@@ -2,6 +2,7 @@ const { images } = require('./lib/apis/images');
 const { bans } = require('./lib/apis/bans');
 const { kumo } = require('./lib/apis/kumo');
 const { lyrics } = require('./lib/apis/lyrics');
+const music = require('./lib/apis/music');
 const banCreator = require('./lib/util/banCreator');
 const Webhook = require('./lib/webhook/server');
 /**
@@ -32,6 +33,7 @@ class ksoftAPI {
 		this.bans = new bans(token);
 		this.kumo = new kumo(token);
 		this.lyrics = new lyrics(token);
+		this.music = new music(token);
 		this.CreateBan = banCreator;
 	}
 }

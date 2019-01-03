@@ -69,7 +69,7 @@ ksoft.bans.add({
 	user_discriminator: String,
 	reason: String,
 	proof: String,
-	appeal_possible: Boolean,
+	appeal_possible: Boolean
 });
 ```
 
@@ -95,7 +95,7 @@ advancedBannedOnly is a special option I added that will read through all of the
 ksoft.bans.bulkCheck(ids, {
 	moreInfo: Boolean,
 	bannedOnly: Boolean,
-	advancedBannedOnly: Boolean, // this can only be used by itself
+	advancedBannedOnly: Boolean // this can only be used by itself
 });
 ```
 
@@ -103,7 +103,7 @@ ksoft.bans.bulkCheck(ids, {
 ksoft.bans.guildMembersCheck(guildMemberCollection, {
 	// The guildMemberCollection is the discord.js/eris guildMemberCollection that I can go through and check to see if they are banned
 	moreInfo: Boolean,
-	ignoreBots: Boolean,
+	ignoreBots: Boolean
 });
 ```
 
@@ -163,6 +163,12 @@ Please note: To play music with this feature you are going to need to have ffmpe
 ksoft.lyrics.searchAndPlay(query: String, voiceConnection);
 ```
 
+### Music api
+
+```javascript
+ksoft.music.recommendations(provider: String, tracks: String | Array<String>)
+```
+
 ## Webhook feature
 
 This just requires adding a few things when we initiate ksoft.js
@@ -172,7 +178,7 @@ const Ksoft = require('ksoft.js');
 const ksoft = new Ksoft('your ksoft token', {
 	useWebhooks: true,
 	port: 2000, // this is the port the http server is going to run on. This can be whatever port you want I am just using 2000 as an example
-	authentication: 'your webhook authentication token',
+	authentication: 'your webhook authentication token'
 });
 
 ksoft.webhook.on('ready', info => {
