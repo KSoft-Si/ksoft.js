@@ -3,7 +3,7 @@ const { bans } = require('./lib/apis/bans');
 const { kumo } = require('./lib/apis/kumo');
 const { lyrics } = require('./lib/apis/lyrics');
 const music = require('./lib/apis/music');
-const banCreator = require('./lib/util/banCreator');
+const BanCreator = require('./lib/util/banCreator');
 const Webhook = require('./lib/webhook/server');
 /**
  * @typedef {Object} webhookOptions webhook options
@@ -11,10 +11,10 @@ const Webhook = require('./lib/webhook/server');
  * @prop {number} port webhook http server port
  * @prop {String} authentication Your webhook authentication
  */
-class ksoftAPI {
+class KsoftAPI {
 	/**
 	 * @constructor
-	 * @param {number} token Your ksoft api token
+	 * @param {String} token Your ksoft api token
 	 * @param {webhookOptions} [webhookOptions] Only needed if you are using webhooks
 	 */
 	constructor(token, webhookOptions) {
@@ -33,8 +33,8 @@ class ksoftAPI {
 		this.kumo = new kumo(token);
 		this.lyrics = new lyrics(token);
 		this.music = new music(token);
-		this.CreateBan = banCreator;
+		this.CreateBan = BanCreator;
 	}
 }
 
-module.exports = ksoftAPI;
+module.exports = KsoftAPI;
