@@ -15,8 +15,7 @@ class ksoftAPI {
 	/**
 	 * @constructor
 	 * @param {number} token Your ksoft api token
-	 * @param {boolean} useWebhooks Whether you want to use the webhook feature
-	 * @param {webhookOptions} webhookOptions webhook options
+	 * @param {webhookOptions} [webhookOptions] Only needed if you are using webhooks
 	 */
 	constructor(token, webhookOptions) {
 		/**
