@@ -22,6 +22,7 @@ class KsoftAPI {
 		 * The webhook class if useWebhooks is true
 		 * @type {Webhook?}
 		 */
+		if(typeof token !== "string") throw new Error("[Ksoft API] Please make sure your token is a string");
 		this.webhook = null;
 		if (webhookOptions) {
 			if (webhookOptions.useWebhooks) {
