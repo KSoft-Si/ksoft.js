@@ -22,11 +22,15 @@ class KsoftAPI {
 		 * The webhook class if useWebhooks is true
 		 * @type {Webhook?}
 		 */
-		if(typeof token !== "string") throw new Error("[Ksoft API] Please make sure your token is a string");
+		if (typeof token !== 'string')
+			throw new Error('[Ksoft API] Please make sure your token is a string');
 		this.webhook = null;
 		if (webhookOptions) {
 			if (webhookOptions.useWebhooks) {
-				this.webhook = new Webhook(webhookOptions.port, webhookOptions.authentication);
+				this.webhook = new Webhook(
+					webhookOptions.port,
+					webhookOptions.authentication
+				);
 			}
 		}
 		this.images = new images(token);
