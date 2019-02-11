@@ -1,4 +1,4 @@
-//const { images } = require('./lib/apis/images');
+const { images } = require('./lib/apis/images');
 const { bans } = require('./lib/apis/bans');
 //const { kumo } = require('./lib/apis/kumo');
 //const { lyrics } = require('./lib/apis/lyrics');
@@ -33,7 +33,7 @@ class KsoftAPI {
 				);
 			}
 		}
-		//this.images = new images(token);
+		this.images = new images(token);
 		this.bans = new bans(token);
 		///this.kumo = new kumo(token);
 		//this.lyrics = new lyrics(token);
