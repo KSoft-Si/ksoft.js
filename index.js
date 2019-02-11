@@ -1,10 +1,10 @@
 const { images } = require('./lib/apis/images');
 const { bans } = require('./lib/apis/bans');
-//const { kumo } = require('./lib/apis/kumo');
-//const { lyrics } = require('./lib/apis/lyrics');
-//const music = require('./lib/apis/music');
+const { kumo } = require('./lib/apis/kumo');
+const { lyrics } = require('./lib/apis/lyrics');
+const music = require('./lib/apis/music');
 const BanCreator = require('./lib/util/banCreator');
-//const Webhook = require('./lib/webhook/server');
+const Webhook = require('./lib/webhook/server');
 /**
  * @typedef {Object} webhookOptions webhook options
  * @prop {Boolean} useWebhooks whether to use the webhook feature
@@ -35,9 +35,9 @@ class KsoftAPI {
 		}
 		this.images = new images(token);
 		this.bans = new bans(token);
-		///this.kumo = new kumo(token);
-		//this.lyrics = new lyrics(token);
-		//this.music = new music(token);
+		this.kumo = new kumo(token);
+		this.lyrics = new lyrics(token);
+		this.music = new music(token);
 		this.CreateBan = BanCreator;
 	}
 }
