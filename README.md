@@ -5,7 +5,7 @@ Cleaner fork of the official API Wrapper for the [KSoft](https://docs.ksoft.si/a
 ## Getting Started
 
 ```
-npm i aerodiscord/ksoft.js#tazio // (run again to update)
+npm i aerodiscord/ksoft.js // (run again to update)
 ```
 
 ```javascript
