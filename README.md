@@ -1,23 +1,27 @@
 # ksoft.js
 
-Official API Wrapper for [KSoft](https://docs.ksoft.si/api/) API, written in Node.js
+Cleaner fork of the official API Wrapper for the [KSoft](https://docs.ksoft.si/api/) API, written in Node.js
 
 ## Getting Started
 
-installing...
-
 ```
-npm install ksoft.js --save
+npm i aerodiscord/ksoft.js#tazio // (run again to update)
 ```
-
-initializing...
 
 ```javascript
-const Ksoft = require('ksoft.js');
-const ksoft = new Ksoft(yourtoken, webhookOptions); // webhook options will be reviewed below
+const { KsoftAPIClient } = require('ksoft.js');
+const ksoft = new KsoftAPIClient(token, options); 
 ```
 
-Note: When you see a paremeter like this: (value: DataType) I am just defining the type of value it takes. That does not mean it's an object. If it has {} around it then it is an object.
+```js
+// possible options:
+{
+	useWebhooks: false, 	// Boolean	whether to run a webhook listener
+	port: null, 			// Number	this is the port the http server is going to run on. 
+	authentication: null 	// String 	your webhook authentication token
+}
+
+```
 
 ## All functions
 
@@ -100,8 +104,8 @@ ksoft.bans.bulkCheck(ids, {
 ```
 
 ```javascript
-ksoft.bans.guildMembersCheck(guildMemberCollection, {
-	// The guildMemberCollection is the discord.js/eris guildMemberCollection that I can go through and check to see if they are banned
+ksoft.bans.guildMembersCheck(guildMembers: Collection, {
+	// guildMembers is a discord.js GuildMemberStore (extends d.js#Collection)
 	moreInfo: Boolean,
 	ignoreBots: Boolean
 });
@@ -131,7 +135,7 @@ ksoft.kumo.geoip(ip: String);
 ```
 
 ```javascript
-ksoft.kumo.convertCurrency(from: String, to: String, value: Number); // From and to are the type of currency you are converting. And value is the value you are converting. (ex: ksoft.kumo.convertCurrency("usd", "eur", 100).then(res => {"value": 88.6129, "pretty": "88.61 EUR"}))
+ksoft.kumo.convertCurrency(from: String, to: String, value: Number); 
 ```
 
 ### Lyrics Api
@@ -155,12 +159,6 @@ ksoft.lyrics.getAlbumById(id: Number);
 ksoft.lyrics.getTrackById(id: Number);
 ```
 
-voiceConnection is the discord.js/eris voiceConnection object you get when you connect to a voice channel. This command will search both youtube and the api for a song and if you provide a voice channel connection it will start playing the song and in the promise return the lyrics. This isn't 100% accurate so use at your own risk.
-
-Please note: To play music with this feature you are going to need to have ffmpeg, node-opus/opuscript, and ytdl-core installed
-
-```javascript
-ksoft.lyrics.searchAndPlay(query: String, voiceConnection);
 ```
 
 ### Music api
@@ -171,36 +169,20 @@ ksoft.music.recommendations(provider: String, tracks: String | Array<String>)
 
 ## Webhook feature
 
-This just requires adding a few things when we initiate ksoft.js
-
 ```javascript
 const Ksoft = require('ksoft.js');
-const ksoft = new Ksoft('your ksoft token', {
-	useWebhooks: true,
-	port: 2000, // this is the port the http server is going to run on. This can be whatever port you want I am just using 2000 as an example
-	authentication: 'your webhook authentication token'
-});
+// possible events: info, ban, unBan, vote. see https://docs.ksoft.si/api/webhooks
 
-ksoft.webhook.on('ready', info => {
-	console.log(info); // this will return the host your http server is running on. This is what you will give to ksoft to send the info to. { "host": "yourpublicip:theportyouspecified"}
-});
-```
-
-that was just to get everything up and running now let's see how we can actually access that data. It's really simple :)
-
-```javascript
-// this is an extension of the previous example. Everything works on events so you can simply do this
-
-ksoft.webhook.on('ban', banData => {
-	console.log(banData); // there you simply get the banInfo sent from ksoft. All the event names are the same as on the ksoft documentation so if you want more info just go to https://docs.ksoft.si/api/webhooks
+ksoft.on('ban', ban => {
+	console.log(ban.id);
 });
 ```
 
 ## Using the BanCreator utility
 
 ```javascript
-// the ksoft variable I am using is the initialized Ksoft class
-const ban = new ksoft.CreateBan()
+const { Ban } = require('ksoft.js');
+const ban = new Ban()
 	.setUserID('1234567892355822') // required
 	.setModID('44457845784574578')
 	.setUserName('blahblahblah')
@@ -213,5 +195,3 @@ ksoft.bans.add(ban).then(res => {
 	console.log(res); // { success: true}
 });
 ```
-
-Special thanks to sdf for helping me troubleshoot some stuff :)
