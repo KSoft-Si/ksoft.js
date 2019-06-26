@@ -1,7 +1,7 @@
-const { images } = require('./lib/apis/images');
-const { bans } = require('./lib/apis/bans');
-const { kumo } = require('./lib/apis/kumo');
-const { lyrics } = require('./lib/apis/lyrics');
+const images = require('./lib/apis/images');
+const bans = require('./lib/apis/bans');
+const kumo = require('./lib/apis/kumo');
+const lyrics = require('./lib/apis/lyrics');
 const music = require('./lib/apis/music');
 const BanCreator = require('./lib/util/banCreator');
 const Webhook = require('./lib/webhook/server');
