@@ -11,7 +11,7 @@ const Webhook = require('./lib/webhook/server');
  * @prop {number} port webhook http server port
  * @prop {String} authentication Your webhook authentication
  */
-class KsoftAPI {
+class KsoftAPIClient {
 	/**
 	 * @constructor
 	 * @param {String} token Your ksoft api token
@@ -25,13 +25,11 @@ class KsoftAPI {
 		if (typeof token !== 'string')
 			throw new Error('[Ksoft API] Please make sure your token is a string');
 		this.webhook = null;
-		if (webhookOptions) {
-			if (webhookOptions.useWebhooks) {
-				this.webhook = new Webhook(
-					webhookOptions.port,
-					webhookOptions.authentication
-				);
-			}
+		if (webhookOptions && webhookOptions.useWebhooks) {
+			this.webhook = new Webhook(
+				webhookOptions.port,
+				webhookOptions.authentication
+			);
 		}
 		this.images = new images(token);
 		this.bans = new bans(token);
