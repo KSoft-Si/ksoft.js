@@ -22,7 +22,7 @@
 		"x_rebelfighter_x",
 		"sdf"
 	],
-	"license": "MIT",
+	"license": "BSD-3-Clause",
 	"dependencies": {
 		"centra": "^2.2.2",
 		"vaxic": "^2.3.7"
