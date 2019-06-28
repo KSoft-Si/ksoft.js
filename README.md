@@ -5,7 +5,7 @@ Cleaner fork of the official API Wrapper for the [KSoft](https://docs.ksoft.si/a
 ## Getting Started
 
 ```
-npm i aerodiscord/ksoft.js // (run again to update)
+npm i git+https://git.farfrom.earth/aero/forks/ksoft.js.git // (run again to update)
 ```
 
 ```javascript
