@@ -24,7 +24,7 @@
 	],
 	"license": "BSD-3-Clause",
 	"dependencies": {
-		"centra": "^2.2.2",
+		"centra": "git+https://git.farfrom.earth/aero/forks/centra.js",
 		"vaxic": "^2.3.7"
 	},
 	"devDependencies": {
