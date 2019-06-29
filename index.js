@@ -24,7 +24,7 @@ class KSoftAPIClient extends EventEmitter {
 
 		this.token = token;
 		this.baseURL = 'https://api.ksoft.si';
-		this.apiStore = join(process.cwd(), 'lib', 'apis');
+		this.apiStore = join(__dirname, 'lib', 'apis');
 
 		/**
 		 * The webhook class if useWebhooks is true
