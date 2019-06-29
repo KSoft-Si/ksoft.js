@@ -93,8 +93,6 @@ ksoft.bans.list(page: Number, perPage: Number);
 ksoft.bans.getUpdate(epochDate: String);
 ```
 
-advancedBannedOnly is a special option I added that will read through all of the ids given and filter out the people that aren't banned and will only return the ones that are banned. It will also return their whole ban object. It will throw an error if there are no people banned in the list. Use .catch() if you want to handle the error.
-
 ```javascript
 ksoft.bans.bulkCheck(ids, {
 	moreInfo: Boolean,
