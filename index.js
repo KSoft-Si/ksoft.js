@@ -12,7 +12,7 @@ const Webhook = require('./lib/webhook/server');
  * @prop {number} port webhook http server port
  * @prop {String} authentication Your webhook authentication
  */
-class KsoftAPI extends EventEmitter {
+class KSoftAPIClient extends EventEmitter {
 
 	/**
 	 * @constructor
@@ -41,20 +41,23 @@ class KsoftAPI extends EventEmitter {
 
 		this._apis = readdirSync(this.apiStore).map(i => i.replace('.js', ''));
 		this.api = fetch(this.baseURL).header('Authorization', `Bearer ${this.token}`);
+
+		const handler = {
+			get: function (obj, prop) {
+				if (typeof prop === "symbol" || prop === 'inspect') return obj[prop];
+				if (obj._apis.includes(prop)) {
+					const API = require(join(obj.apiStore, prop));
+					return new API(obj);
+				} else {
+					throw new SyntaxError(`[KSoft API] ${prop} is not a valid API path.`);
+				}
+			}
+		};
+
+
+		return new Proxy(this, handler);
 	}
 
 }
 
-const handler = {
-	get: function (obj, prop) {
-		if (obj._apis.includes(prop)) {
-			return require(join(this.apiStore), prop)(this);
-		} else {
-			throw new SyntaxError(`[KSoft API] ${prop} is not a valid API path.`);
-		}
-	}
-};
-
-const KsoftAPIClient = new Proxy(KsoftAPI, handler);
-
-module.exports = { KsoftAPIClient, Ban };
+module.exports = { KSoftAPIClient, Ban };

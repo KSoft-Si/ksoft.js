@@ -1,5 +1,6 @@
-# JS
+# custom
 package-lock.json
+tests/
 
 # Logs
 logs
