@@ -1,0 +1,11 @@
+{
+	"extends": "aero",
+	"rules": {
+		"lines-around-comment": "off",
+		"camelcase": "off",
+		"valid-jsdoc": "off",
+		"id-length": "off",
+		"consistent-return": "off",
+		"func-names": "off"
+	}
+}
