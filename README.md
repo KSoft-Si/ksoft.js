@@ -9,8 +9,8 @@ npm i git+https://git.farfrom.earth/aero/forks/ksoft.js.git // (run again to upd
 ```
 
 ```javascript
-const { KsoftAPIClient } = require('ksoft.js');
-const ksoft = new KsoftAPIClient(token, options); 
+const { KSoftAPIClient } = require('ksoft.js');
+const ksoft = new KSoftAPIClient(token, options); 
 ```
 
 ```js
