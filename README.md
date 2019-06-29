@@ -157,8 +157,6 @@ ksoft.lyrics.getAlbumById(id: Number);
 ksoft.lyrics.getTrackById(id: Number);
 ```
 
-```
-
 ### Music api
 
 ```javascript
