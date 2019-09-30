@@ -1,8 +1,8 @@
 {
 	"name": "ksoft.js",
 	"version": "2.0.0",
-	"description": "Unofficial API Wrapper for KSoft.Si API, written in Node.js",
-	"main": "index.js",
+	"description": "Official Node.js Wrapper for the KSoft.Si API.",
+	"main": "src/index.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://git.farfrom.earth/aero/forks/ksoft.js.git"
@@ -18,18 +18,13 @@
 		"discord"
 	],
 	"author": "Ravy <ravy@aero.bot> (https://ravy.xyz)",
-	"contributors": [
-		"x_rebelfighter_x",
-		"sdf"
-	],
 	"license": "BSD-3-Clause",
 	"dependencies": {
 		"centra": "git+https://git.farfrom.earth/aero/forks/centra.git",
-		"vaxic": "^2.3.7"
+		"flatted": "^2.0.1"
 	},
 	"devDependencies": {
 		"eslint": "^5.6.0",
-		"eslint-config-aero": "git+https://git.farfrom.earth/aero/forks/eslint-config-aero.git",
-		"discord.js": "github:discordjs/discord.js#master"
+		"eslint-config-aero": "git+https://git.farfrom.earth/aero/forks/eslint-config-aero.git"
 	}
 }
