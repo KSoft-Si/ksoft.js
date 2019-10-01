@@ -5,7 +5,6 @@ module.exports = class extends Endpoint {
 
 	async run(ban) {
 		if (!(ban instanceof Ban)) throw new SyntaxError('Please use the ban builder');
-		console.log(ban.apiObject);
 		return this.client.api.bans.add.post(ban.apiObject, true);
 	}
 

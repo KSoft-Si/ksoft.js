@@ -11,7 +11,6 @@ module.exports = class extends Endpoint {
 	}
 
 	async serialize(data) {
-		console.log(data)
 		if (!data.data.length) throw new Error('No results');
 		return data.data.map(track => new Track(track.name, -1,
 			{ name: track.artist, id: track.artist_id },
