@@ -1,5 +1,6 @@
 const Endpoint = require('../../../lib/Endpoint');
 const Ban = require('../../../lib/structures/Ban');
+const BanAPIResponse = require('../../../lib/structures/BanAPIResponse');
 
 module.exports = class extends Endpoint {
 
@@ -9,7 +10,6 @@ module.exports = class extends Endpoint {
 	}
 
 	async serialize(data) {
-		if (data.success) return { success: true };
-		return { succes: false, message: data.message };
+		return new BanAPIResponse(data);
 	}
 }
