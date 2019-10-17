@@ -1,6 +1,6 @@
 {
 	"name": "ksoft.js",
-	"version": "2.1.0",
+	"version": "2.1.3",
 	"description": "Official Node.js Wrapper for the KSoft.Si API.",
 	"main": "src/index.js",
 	"repository": {
@@ -20,7 +20,7 @@
 	"author": "Ravy <ravy@aero.bot> (https://ravy.xyz)",
 	"license": "BSD-3-Clause",
 	"dependencies": {
-		"centra": "git+https://git.farfrom.earth/aero/forks/centra.git",
+		"centra-aero": "^1.0.0",
 		"flatted": "^2.0.1"
 	},
 	"devDependencies": {
