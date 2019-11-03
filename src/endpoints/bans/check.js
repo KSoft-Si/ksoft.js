@@ -3,10 +3,14 @@ const Endpoint = require('../../../lib/Endpoint');
 module.exports = class extends Endpoint {
 
 	async run(user) {
-		return this.client.api.bans.check.get({ user });
+		return Array.isArray(user)
+			? this.client.api.bans.bulkcheck.get({ users: user.join(','), banned_only: true })
+			: this.client.api.bans.check.get({ user });
 	}
 
 	async serialize(data) {
-		return data.is_banned;
+		return Array.isArray(data)
+			? data
+			: data.is_banned;
 	}
 }
