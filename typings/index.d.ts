@@ -22,7 +22,7 @@ declare module 'ksoft.js' {
 		tracks?: Track[];
 	}
 
-	interface Ban {
+	export class Ban {
 		user: BannedUser;
 		moderator: string;
 		reason: string;
@@ -31,7 +31,6 @@ declare module 'ksoft.js' {
 		appealable: boolean;
 
 		setUser(id: string, name: string, discriminator: string): Ban;
-		setUser(user: Discord.User): Ban;
 		setModerator(id: string): Ban;
 		setReason(reason: string, proof: string): Ban;
 	}
@@ -73,7 +72,7 @@ declare module 'ksoft.js' {
 		post: RedditPost;
 	}
 
-	interface ReditPost {
+	interface RedditPost {
 		title: string;
 		subreddit: string;
 		link: string;
@@ -204,7 +203,7 @@ declare module 'ksoft.js' {
 	}
 
 	interface KumoRoute {
-		convert(value: integer, from: string, to: string): Promise<Conversion>;
+		convert(value: number, from: string, to: string): Promise<Conversion>;
 		geoip(ip: string): Promise<IPReport>;
 		weather(query: string, options: WeatherKumoPathOptions): Promise<WeatherReport>;
 	}
@@ -221,12 +220,13 @@ declare module 'ksoft.js' {
 		recommendations(provider: 'spotify' | 'youtube' | 'youtube_ids' | 'youtube_titles', tracks: string[], token: string, options: RecommendationsMusicPathOptions): Promise<Suggestion[]>;
 	}
 
-	export class KSoftAPIClient {
-		bans: BansRoute;
-		images: ImagesRoute;
-		kumo: KumoRoute;
-		lyrics: LyricsRoute;
-		music: MusicRoute;
+	export class KSoftClient {
+		constructor(token: string);
+		public bans: BansRoute;
+		public images: ImagesRoute;
+		public kumo: KumoRoute;
+		public lyrics: LyricsRoute;
+		public music: MusicRoute;
 	}
 
 }
