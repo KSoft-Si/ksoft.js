@@ -22,7 +22,7 @@
 		"discord"
 	],
 	"dependencies": {
-		"centra-aero": "^1.0.0",
+		"@aero/centra": "^1.0.0",
 		"flatted": "^2.0.1"
 	},
 	"devDependencies": {
