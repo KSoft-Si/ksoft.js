@@ -3,6 +3,14 @@ const WeatherReport = require('../../../lib/structures/WeatherReport');
 
 module.exports = class extends Endpoint {
 
+	/**
+	 * Get current weather of a place
+	 * @param {string} query - Place or Coordinates
+	 * @param {Object} options
+	 * @param {string} options.units - The set of units to use in the report
+	 * @param {string} options.lang - The language to send the report in
+	 * @returns {WeatherReport}
+	 */
 	async run(query, options = {}) {
 		const reg = /[0-9.]+, [0-9.]+/;
 		const units = options.units || 'auto';
