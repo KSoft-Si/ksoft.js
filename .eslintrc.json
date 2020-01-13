@@ -1,5 +1,5 @@
 {
-	"extends": "aero",
+	"extends": "@aero/lint",
 	"rules": {
 		"lines-around-comment": "off",
 		"camelcase": "off",
