@@ -9,6 +9,6 @@ module.exports = class extends Endpoint {
 
 	async serialize(data) {
 		if (data.error) throw new Error(data.message);
-		return new Track(data.name, data.id, data.artist, data.albums, data.lyrics);
+		return new Track(data.name, data.id, data.artist, data.albums, data.lyrics, data.url);
 	}
 }

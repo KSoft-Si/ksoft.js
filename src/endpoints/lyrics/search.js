@@ -7,7 +7,7 @@ module.exports = class extends Endpoint {
 		if (!query) throw new SyntaxError('No query');
 		const limit = options.limit || 10;
 		const text_only = options.textOnly || false;
-		return this.client.api.lyrics.search({ q: query, limit, text_only, offline: 'yes' });
+		return this.client.api.lyrics.search({ q: query, limit, text_only });
 	}
 
 	async serialize(data) {
@@ -15,7 +15,7 @@ module.exports = class extends Endpoint {
 		return data.data.map(track => new Track(track.name, track.id,
 			{ name: track.artist, id: track.artist_id },
 			this.createAlbums(track.album, track.album_ids, track.album_year),
-			this.normalizeLyrics(track.lyrics)));
+			this.normalizeLyrics(track.lyrics), track.url));
 	}
 
 	normalizeLyrics(text) {
