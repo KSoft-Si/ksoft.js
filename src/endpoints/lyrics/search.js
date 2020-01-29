@@ -15,7 +15,7 @@ module.exports = class extends Endpoint {
 		return data.data.map(track => new Track(track.name, track.id,
 			{ name: track.artist, id: track.artist_id },
 			this.createAlbums(track.album, track.album_ids, track.album_year),
-			this.normalizeLyrics(track.lyrics), track.url));
+			this.normalizeLyrics(track.lyrics), track.url, track.album_art));
 	}
 
 	normalizeLyrics(text) {
