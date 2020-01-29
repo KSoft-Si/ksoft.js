@@ -117,6 +117,7 @@ declare module 'ksoft.js' {
 		artist?: Artist;
 		albums?: Album[];
 		lyrics: string;
+		artwork: string;
 	}
 
 	interface WeatherReport {
