@@ -2,7 +2,7 @@
 
 ## Install
 
-`npm i ksoft.js`
+`npm i @ksoft/api`
 
 
 ## Documentation
