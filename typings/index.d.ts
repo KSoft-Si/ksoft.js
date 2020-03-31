@@ -1,4 +1,4 @@
-declare module 'ksoft.js' {
+declare module '@aero/ksoft' {
 
 	interface Album {
 		mame: string;
