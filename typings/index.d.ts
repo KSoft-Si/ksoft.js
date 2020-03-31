@@ -79,6 +79,7 @@ declare module '@aero/ksoft' {
 		upvotes: number;
 		downvotes: number;
 		author: string;
+		comments: number;
 	}
 
 	interface SpotifyAlbum {
