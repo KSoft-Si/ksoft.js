@@ -15,7 +15,8 @@ module.exports = class extends Endpoint {
 
 	async serialize(data) {
 		return data.total > 0
-			? data.tracks.map(track => Suggestion(track))
+			? data.tracks.map(track => new Suggestion(track))
 			: [];
 	}
-}
+
+};

@@ -11,4 +11,5 @@ module.exports = class extends Endpoint {
 		if (data.code === 404) throw new Error(data.message);
 		return new Image(data);
 	}
-}
+
+};

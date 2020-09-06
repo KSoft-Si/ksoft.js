@@ -1,11 +1,11 @@
 {
 	"name": "@aero/ksoft",
 	"description": "Official Node.js Wrapper for the KSoft.Si API.",
-	"version": "3.1.9",
+	"version": "4.0.0-rc1",
 	"main": "src/index.js",
 	"types": "typings/index.d.ts",
 	"type": "commonjs",
-	"author": "Ravy <ravy@aero.bot> (https://ravy.xyz)",
+	"author": "Ravy <ravy@aero.bot> (https://ravy.pink)",
 	"license": "BSD-3-Clause",
 	"repository": {
 		"type": "git",
@@ -22,14 +22,14 @@
 		"discord"
 	],
 	"dependencies": {
-		"@aero/centra": "^1.0.0",
+		"@aero/centra": "^1.0.6",
 		"flatted": "^2.0.1"
 	},
 	"devDependencies": {
-		"@aero/lint": "^1.0.0",
-		"eslint": "^5.6.0"
+		"@aero/eslint-config": "^1.0.5",
+		"eslint": "^7.8.1"
 	},
 	"engines": {
-		"node": ">=10.0.0"
+		"node": ">=14.0.0"
 	}
 }

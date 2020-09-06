@@ -1,11 +1,9 @@
 {
-	"extends": "@aero/lint",
+	"extends": "@aero",
+	"parserOptions": {
+		"ecmaVersion": 12
+	},
 	"rules": {
-		"lines-around-comment": "off",
-		"camelcase": "off",
-		"valid-jsdoc": "off",
-		"id-length": "off",
-		"consistent-return": "off",
-		"func-names": "off"
+		"camelcase": "off"
 	}
 }

@@ -14,4 +14,5 @@ module.exports = class extends Endpoint {
 		}
 		return tags;
 	}
-}
+
+};

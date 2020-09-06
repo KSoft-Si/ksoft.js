@@ -10,4 +10,5 @@ module.exports = class extends Endpoint {
 	async serialize(data) {
 		return new WikiHowImage(data);
 	}
-}
+
+};

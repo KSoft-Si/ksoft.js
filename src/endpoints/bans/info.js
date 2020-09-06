@@ -3,11 +3,6 @@ const Ban = require('../../../lib/structures/Ban');
 
 module.exports = class extends Endpoint {
 
-	/**
-	 * Get information about bans on KSoft
-	 * @param {string|string[]} user - The user or users to get ban information about
-	 * @returns {Promise<Ban>|Promise<Ban[]>}
-	 */
 	async run(user) {
 		return Array.isArray(user)
 			? this.client.api.bans.bulkcheck.get({ users: user.join(','), more_info: true })
@@ -22,4 +17,5 @@ module.exports = class extends Endpoint {
 			return new Ban(data);
 		}
 	}
-}
+
+};

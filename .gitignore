@@ -1,4 +1,4 @@
 package-lock.json
-tests/
+test/
 docs/out
 node_modules/

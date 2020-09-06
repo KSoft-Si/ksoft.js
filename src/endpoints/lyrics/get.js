@@ -6,16 +6,19 @@ module.exports = class extends Endpoint {
 	async run(query, options = {}) {
 		if (!query) throw new SyntaxError('No query');
 		const text_only = options.textOnly || false;
-		return this.client.api.lyrics.search({ q: query, text_only, limit: 1 });
+		return this.client.api.lyrics.search({ q: query, text_only, limit: 1 }); /* eslint-disable-line id-length */
 	}
 
 	async serialize(data) {
 		if (!data.data.length) throw new Error('No results');
 		const track = data.data[0];
+		const artists = track?.meta.artists
+			? track.meta.artists.map(artist => ({ id: artist.id, primary: artist.is_primary, name: artist.name }))
+			: { name: track.artist, id: track.artist_id };
 		return new Track(track.name, track.id,
-			{ name: track.artist, id: track.artist_id },
+			artists,
 			this.createAlbums(track.album, track.album_ids, track.album_year),
-			this.normalizeLyrics(track.lyrics), track.url, track.album_art);
+			this.normalizeLyrics(track.lyrics), track.url, track.album_art, track.singalong, track.meta);
 	}
 
 	normalizeLyrics(text) {
@@ -31,4 +34,5 @@ module.exports = class extends Endpoint {
 		}
 		return albums;
 	}
-}
+
+};

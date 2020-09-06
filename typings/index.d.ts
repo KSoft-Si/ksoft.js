@@ -13,6 +13,7 @@ declare module '@aero/ksoft' {
 		id?: string;
 		albums?: Album[];
 		tracks?: Track[];
+		primary?: boolean;
 	}
 
 	interface Artist {
@@ -27,10 +28,10 @@ declare module '@aero/ksoft' {
 		moderator: string;
 		reason: string;
 		proof: string
-		active: boolean;
-		appealable: boolean;
+		active?: boolean;
+		appealable?: boolean;
 
-		setUser(id: string, name: string, discriminator: string): Ban;
+		setUser(id: string): Ban;
 		setModerator(id: string): Ban;
 		setReason(reason: string, proof: string): Ban;
 	}
@@ -46,9 +47,19 @@ declare module '@aero/ksoft' {
 		discriminator?: string;
 	}
 
+	interface Connection {
+		artists: string[];
+		album: string[];
+		track: string;
+	}
+
 	interface Conversion {
 		value: number;
 		pretty: string;
+	}
+
+	interface DeezerConnection extends Connection {
+		type: 'deezer';
 	}
 
 	interface Image {
@@ -62,10 +73,21 @@ declare module '@aero/ksoft' {
 		map: string;
 	}
 
+	interface Line {
+		timestamp: number;
+		duration: number;
+		text: string;
+	}
+
 	interface Location {
 		lat: number;
 		lon: number;
 		address: string;
+	}
+
+	interface Lyrics extends String {
+		private text: string;
+		lines?: Line[];
 	}
 
 	interface RedditImage extends Image {
@@ -80,6 +102,7 @@ declare module '@aero/ksoft' {
 		downvotes: number;
 		author: string;
 		comments: number;
+		awards: number;
 	}
 
 	interface SpotifyAlbum {
@@ -91,6 +114,10 @@ declare module '@aero/ksoft' {
 	interface SpotifyArtist {
 		name: string;
 		link: string;
+	}
+
+	interface SpotifyConnection extends Connection {
+		type: 'spotify';
 	}
 
 	interface SpotifyTrack {
@@ -115,10 +142,13 @@ declare module '@aero/ksoft' {
 	interface Track {
 		name: string;
 		id: string;
-		artist?: Artist;
+		artists?: Artist[];
 		albums?: Album[];
-		lyrics: string;
+		lyrics: Lyrics;
 		artwork: string;
+		connections?: (SpotifyConnection | DeezerConnection)[];
+		gain?: number;
+		bpm?: number;
 	}
 
 	interface WeatherReport {

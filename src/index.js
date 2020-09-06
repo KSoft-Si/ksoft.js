@@ -4,4 +4,4 @@ const Ban = require('../lib/structures/Ban');
 module.exports = {
 	KSoftClient,
 	Ban
-}
+};

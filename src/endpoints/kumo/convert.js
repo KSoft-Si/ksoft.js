@@ -18,4 +18,5 @@ module.exports = class extends Endpoint {
 		if (data.error) throw new Error(data.message);
 		return new Conversion(data.value, data.pretty);
 	}
-}
+
+};

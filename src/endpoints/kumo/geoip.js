@@ -16,4 +16,5 @@ module.exports = class extends Endpoint {
 		if (data.error) throw new Error(data.message);
 		return new IPReport(data.data);
 	}
-}
+
+};
