@@ -11,6 +11,7 @@ module.exports = class extends Endpoint {
 	}
 
 	async serialize(data) {
+		if(!data.data) throw new Error('No Data found, you are likely using the wrong token (V1 token is the correct token)')
 		if (!data.data.length) throw new Error('No results');
 
 		return data.data.map(track => {
