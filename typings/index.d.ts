@@ -85,7 +85,7 @@ declare module '@aero/ksoft' {
 		address: string;
 	}
 
-	interface Lyrics extends String {
+	class Lyrics extends String {
 		private text: string;
 		lines?: Line[];
 	}
@@ -228,8 +228,8 @@ declare module '@aero/ksoft' {
 		image(id: string): Promise<Image>;
 		meme(): Promise<RedditImage>;
 		nsfw(gifs: boolean): Promise<RedditImage>;
-		random(tag: string, options: RandomImagePathOptions): Promise<Image>;
-		reddit(subreddit: string, options: RedditImagePathOptions): Promise<RedditImage>;
+		random(tag: string, options?: RandomImagePathOptions): Promise<Image>;
+		reddit(subreddit: string, options?: RedditImagePathOptions): Promise<RedditImage>;
 		tags(): Promise<Tag[]>;
 		wikihow(): Promise<WikiHowImage>;
 	}
@@ -237,19 +237,19 @@ declare module '@aero/ksoft' {
 	interface KumoRoute {
 		convert(value: number, from: string, to: string): Promise<Conversion>;
 		geoip(ip: string): Promise<IPReport>;
-		weather(query: string, options: WeatherKumoPathOptions): Promise<WeatherReport>;
+		weather(query: string, options?: WeatherKumoPathOptions): Promise<WeatherReport>;
 	}
 
 	interface LyricsRoute {
-		get(query: string, options: GetLyricsPathOptions): Promise<Track>;
-		search(query: string, options: SearchLyricsPathOptions): Promise<Track[]>;
+		get(query: string, options?: GetLyricsPathOptions): Promise<Track>;
+		search(query: string, options?: SearchLyricsPathOptions): Promise<Track[]>;
 	}
 
 	interface MusicRoute {
 		album(id: string): Promise<Album>;
 		artist(id: string): Promise<Artist>;
 		track(id: string): Promise<Track>;
-		recommendations(provider: 'spotify' | 'youtube' | 'youtube_ids' | 'youtube_titles', tracks: string[], token: string, options: RecommendationsMusicPathOptions): Promise<Suggestion[]>;
+		recommendations(provider: 'spotify' | 'youtube' | 'youtube_ids' | 'youtube_titles', tracks: string[], token: string, options?: RecommendationsMusicPathOptions): Promise<Suggestion[]>;
 	}
 
 	export class KSoftClient {
