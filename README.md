@@ -1,12 +1,10 @@
 # ksoft.js
 
-**This version supports Node.js v14+ only**, as it incorporates some of the very shiny new language features. If your environment does not have Node.js v14, I heavily encourage upgrading, as it brings other benefits as well.
+The KSoft.Si API sadly doesn't exist anymore, so this library is deprecated.
 
-## Install
+Depending on what you used it for, you might find the following alternatives interesting:
 
-`npm i @ksoft/api`
-
-
-## Documentation
-
-You can find the docs [here](https://js.docs.ksoft.si).
+- User Trust: [the ravy.org API](https://ravy.org/api) (free, application required for non-KSoft users, ksoft users can use their KSoft token but are encouraged to also apply)
+- Weather: [OpenWeatherMap](https://openweathermap.org/api) (limited free tier)
+- Weather: [Open-Meteo](https://open-meteo.com/en) (unlimited free tier without API key)
+- Currency: [MasterCard](https://developer.mastercard.com/enhanced-currency-conversion-calculator/documentation/api-reference/) (???)
